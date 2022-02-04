@@ -2,7 +2,9 @@ import cv2
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
+from PyQt5 import QtWidgets as widgets
 from matplotlib import pyplot as plt
+Ui_MainWindow = __import__("interface").Ui_MainWindow
 
 model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
 
@@ -46,3 +48,12 @@ if saved:
     print("File saved")
 else:
     print("Something went wrong. Please check the folder and file name then try again.")
+
+if __name__ == "__main__":
+    import sys
+    app = widgets.QApplication(sys.argv)
+    MainWindow = widgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
