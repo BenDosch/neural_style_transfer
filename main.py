@@ -261,6 +261,7 @@ class Ui_MainWindow(object):
             self.stylizedPreview_i.setPixmap(QtGui.QPixmap(self.stylized_image))
     
     def save_stylized(self):
+        pass
         # cv2.imwrite('/content/gdrive/MyDrive/style_transfer/ben_styled_waves.jpg', cv2.cvtColor(np.squeeze(stylized_image)*255, cv2.COLOR_BGR2RGB))
 
 if __name__ == "__main__":
